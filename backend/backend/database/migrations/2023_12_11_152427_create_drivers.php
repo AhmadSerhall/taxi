@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('car');
             $table->string('vin');
             $table->unsignedBigInteger('driver_id');
-            $table->foreign('driver_id')->references('users_id')->on('users');
+            $table->foreign('driver_id')->references('users_id')->on('users')->onDelete('cascade');;
             $table->timestamps();
 
         });

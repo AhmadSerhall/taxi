@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('rides', function (Blueprint $table) {
             $table->bigIncrements('ride_id');
             $table->unsignedBigInteger('driver_id');
-            $table->foreign('driver_id')->references('user_id')->on('users');
+            $table->foreign('driver_id')->references('user_id')->on('users')->onDelete('cascade');;
             $table->unsignedBigInteger('passenger_id');
-            $table->foreign('passenger_id')->references('user_id')->on('users');
+            $table->foreign('passenger_id')->references('user_id')->on('users')->onDelete('cascade');;
             $table->string('location_start');
             $table->string('location_end');
             $table->string('status');

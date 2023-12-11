@@ -20,7 +20,7 @@ return new class extends Migration
             $table->char('gender');
             $table->string('image');
             $table->unsignedBigInteger('role_id');
-            $table->$table->foreign('role_id')->references('users_id')->on('users');
+            $table->$table->foreign('role_id')->references('users_id')->on('users')->onDelete('cascade');;
             $table->timestamps();
         });
     }
