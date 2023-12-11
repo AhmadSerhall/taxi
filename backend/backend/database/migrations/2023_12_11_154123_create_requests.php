@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->unsignedBigInteger('driver_id');
-            $table->foreign('driver_id')->references('users_id')->on('users')->onDelete('cascade');;
+            $table->foreign('driver_id')->references('user_id')->on('users')->onDelete('cascade');;
             $table->unsignedBigInteger('passenger_id');
-            $table->foreign('passenger_id')->references('users_id')->on('users')->onDelete('cascade');;
+            $table->foreign('passenger_id')->references('user_id')->on('users')->onDelete('cascade');;
             $table->string('status');
             $table->timestamps();
         });
