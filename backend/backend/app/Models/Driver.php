@@ -23,7 +23,7 @@ class Driver extends Authenticatable implements JWTSubject
             'vin',
             
         ];
-          /**
+     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
@@ -43,7 +43,7 @@ class Driver extends Authenticatable implements JWTSubject
         'password' => 'hashed',
     ];
 
-               /**
+       /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
      * @return mixed
@@ -64,7 +64,6 @@ class Driver extends Authenticatable implements JWTSubject
           'role_id'=>$this->role_id,
         ];
     }
-
     public function rides()
     {
         return $this->hasMany(Ride::class, 'driver_id', 'driver_id');

@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DriversController;
+use App\Http\Controllers\RequestsController;
+use App\Http\Controllers\RiderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RideController;
 
@@ -16,16 +18,6 @@ Route::controller(AuthController::class)->group(function () {
 
 });
 
-
-Route::controller(DriversController::class)->group(function(){
-
-    Route::delete('delete/driver', 'delete_driver');
-    Route::post('approve/driver', 'approve_driver');
-
-
-
-});
-
 Route::controller(UserController::class)->group(function () {
     Route::get('get_users', 'get_users');
     Route::post('add_user', 'add_user');
@@ -33,7 +25,32 @@ Route::controller(UserController::class)->group(function () {
 
 });
 
+Route::controller(DriversController::class)->group(function(){
+
+    Route::delete('delete/driver', 'delete_driver');
+    Route::post('approve/driver', 'approve_driver');
+    Route::post('login/driver', 'login');
+    Route::post('register/driver', 'register');
+    Route::post('logout/driver', 'logout');
+});
+
+
 
 Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
-Route::post('add_ride', [RideController::class, 'add_ride']);
-Route::get('get_rides', [RideController::class, 'get_rides']);
+
+
+Route::controller(RiderController::class)->group(function () {
+    Route::post('approve/ride', 'approve_ride');
+});
+
+Route::controller(RequestsController::class)->group(function () {
+    Route::post('create/request', 'create_request');
+    Route::post('approve/request', 'approve_request');
+
+});
+    
+    
+    Route::controller(RequestsController::class)->group(function () {
+    Route::post('create/request', 'create_request');
+    Route::post('approve/request', 'approve_request');
+});
