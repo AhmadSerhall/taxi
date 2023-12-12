@@ -65,4 +65,8 @@ class Driver extends Authenticatable implements JWTSubject
         ];
     }
 
+    public function rides()
+    {
+        return $this->hasMany(Ride::class, 'driver_id', 'driver_id');
+    }
 }

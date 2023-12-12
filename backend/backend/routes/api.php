@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DriversController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RideController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -34,3 +35,5 @@ Route::controller(UserController::class)->group(function () {
 
 
 Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
+Route::post('add_ride', [RideController::class, 'add_ride']);
+Route::get('get_rides', [RideController::class, 'get_rides']);
