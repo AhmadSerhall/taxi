@@ -15,10 +15,12 @@ class RequestsController extends Controller
         if (Auth::Check()){
              
             $user = Auth::user();
+         
             if($user && $user->role_id == 3){
  
                 $request = Crequest::create(['user_id' => $user->user_id, 'driver_id'=>$req->driver_id]);
- 
+                return response()->json([
+                    'status' => 'success',]);
             }else{
                 return response()->json(['Only passengers are allowed to create a request']);
             }
@@ -35,7 +37,8 @@ class RequestsController extends Controller
                 if($req->respond == 'Approved'){
                 
                 $request = Crequest::where('driver_id', $req->driver_id)->update(['status' => $req->status]);
-                 
+                return response()->json([
+                    'status' => 'success',]);
                
                 }else{
             $request = Crequest::where('driver_id' , $req->driver_id)->get();
