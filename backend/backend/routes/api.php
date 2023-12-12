@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -43,4 +44,9 @@ Route::controller(RequestsController::class)->group(function () {
     Route::post('create/request', 'create_request');
     Route::post('approve/request', 'approve_request');
 
+});
+
+Route::controller(ChatController::class)->group(function () {
+    Route::post('chat', 'create');
+    
 });
