@@ -1,12 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { Route, Router, Routes } from "react-router-dom";
-import Login from "./components/login";
+import { Routes, Route, Router } from "react-router-dom";
+import HomePage from "./pages/HomePage/index";
+import DriversTable from "./pages/Drivers/Drivers";
+import Login from "./components/login/login";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Login />}></Route>
+      <Route path="/" element={<Login />} />
+      <Route path="/admin_panel" element={<HomePage />} />
+      <Route path="/admin_panel/drivers" element={<DriversTable />} />
     </Routes>
   );
 }
