@@ -40,5 +40,16 @@ Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
 
 Route::controller(RiderController::class)->group(function () {
     Route::post('approve/ride', 'approve_ride');
+});
 
+Route::controller(RequestsController::class)->group(function () {
+    Route::post('create/request', 'create_request');
+    Route::post('approve/request', 'approve_request');
+
+});
+    
+    
+    Route::controller(RequestsController::class)->group(function () {
+    Route::post('create/request', 'create_request');
+    Route::post('approve/request', 'approve_request');
 });

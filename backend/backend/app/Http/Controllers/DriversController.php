@@ -14,37 +14,38 @@ class DriversController extends Controller
 {
         public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login','register']]);
+        $this->middleware('auth:driver-api', ['except' => ['login','register']]);
     }
 
-    public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
-        ]);
-        $credentials = $request->only('email', 'password');
+public function login(Request $request)
+{
+    $request->validate([
+        'email' => 'required|string|email',
+        'password' => 'required|string',
+    ]);
 
-        $token = Auth::attempt($credentials);
-        if (!$token) {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Unauthorized',
-            ], 401);
-        }
+    $credentials = $request->only('email', 'password');
 
-        $user = Auth::user();
+    $token = auth('driver-api')->attempt($credentials);
+
+    if (!$token) {
         return response()->json([
-                'status' => 'success',
-                'user' => $user,
-                'authorization' => [
-                    'token' => $token,
-                    'type' => 'bearer',
-                ]
-            ]);
-
+            'status' => 'error',
+            'message' => 'Unauthorized',
+        ], 401);
     }
 
+    $user = auth('driver-api')->user();
+
+    return response()->json([
+        'status' => 'success',
+        'user' => $user,
+        'authorization' => [
+            'token' => $token,
+            'type' => 'bearer',
+        ]
+    ]);
+}
     public function register(Request $request){
      
             $validator = Validator::make($request->all(), [
@@ -170,8 +171,6 @@ class DriversController extends Controller
                      "message"=>"User not found"   
                 ]);
           
-      
-           
         }
     }
 
