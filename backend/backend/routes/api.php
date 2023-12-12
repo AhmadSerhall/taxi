@@ -17,6 +17,12 @@ Route::controller(AuthController::class)->group(function () {
 
 });
 
+Route::controller(UserController::class)->group(function () {
+    Route::get('get_users', 'get_users');
+    Route::post('add_user', 'add_user');
+    Route::post('update_user', 'update_user');
+
+});
 
 Route::controller(DriversController::class)->group(function(){
 
@@ -25,17 +31,8 @@ Route::controller(DriversController::class)->group(function(){
     Route::post('login/driver', 'login');
     Route::post('register/driver', 'register');
     Route::post('logout/driver', 'logout');
-
-
-
 });
 
-Route::controller(UserController::class)->group(function () {
-    Route::get('get_users', 'get_users');
-    Route::post('add_user', 'add_user');
-    Route::post('update_user', 'update_user');
-
-});
 
 
 Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
@@ -43,6 +40,5 @@ Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
 
 Route::controller(RiderController::class)->group(function () {
     Route::post('approve/ride', 'approve_ride');
-
 
 });
