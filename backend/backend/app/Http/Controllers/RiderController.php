@@ -18,15 +18,14 @@ class RiderController extends Controller
     }
 
     public function finish_ride(Request $req){
-        if (Auth::Check()){
-             
-            $user = Auth::user();
+        if (auth('driver-api')->user() instanceof Driver && auth('driver-api')->user()){
+            $user = auth('driver-api')->user();
 
-            if($user && $user->role_id == 3){
+            if($user && $user->role_id == 2){
                 if($req->status == 'PassengerArrived'){
                     $ride = new ride;
                     $ride->driver_id = $req->driver_id;
-                    $ride->user_id = $user->user_id;
+                    $ride->user_id = $req->user_id;
                     $ride->location_start = $req->location_start;
                     $ride->location_end = $req->location_end;
                     $ride->status = 'Completed';
@@ -39,7 +38,7 @@ class RiderController extends Controller
                 }else if ($req->status == 'Abandoned') {
                     $ride = new ride;
                     $ride->driver_id = $req->driver_id;
-                    $ride->user_id = $user->user_id;
+                    $ride->user_id = $req->user_id;
                     $ride->location_start = $req->location_start;
                     $ride->location_end = $req->location_end;
                     $ride->status = 'Abandoned';
