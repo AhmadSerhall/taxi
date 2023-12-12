@@ -46,7 +46,8 @@ class AuthController extends Controller
     }
 
     public function register(Request $request){
-        if($request->type_role==1){        $validator = Validator::make($request->all(), [
+        if($request->type_role==1){        
+            $validator = Validator::make($request->all(), [
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'gender' => 'required|string|max:1',

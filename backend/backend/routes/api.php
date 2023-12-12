@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DriversController;
+use App\Http\Controllers\RequestsController;
+use App\Http\Controllers\RiderController;
 use App\Http\Controllers\UserController;
 
 Route::controller(AuthController::class)->group(function () {
@@ -34,3 +36,10 @@ Route::controller(UserController::class)->group(function () {
 
 
 Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
+
+
+Route::controller(RiderController::class)->group(function () {
+    Route::post('approve/ride', 'approve_ride');
+
+
+});
