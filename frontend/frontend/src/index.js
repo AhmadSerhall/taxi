@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-
+import RideRequest from './components/ride_request';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RideRequest passenger_location = {'location 1'} destination = {'location 2'} driver_name = {'driver name'} request_date = {'02/08/2023'} status = {'Completed'} rate = {3}/>
+    <RideRequest passenger_location = {'location 1'} destination = {'location 2'} driver_name = {'driver name'} request_date = {'02/08/2023'} status = {'Abandoned'} rate = {3}/>
+    <RideRequest passenger_location = {'location 1'} destination = {'location 2'} driver_name = {'driver name'} request_date = {'02/08/2023'} status = {'Pending'} rate = {3}/>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
