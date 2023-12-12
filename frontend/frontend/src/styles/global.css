@@ -1,0 +1,38 @@
+.page{
+    height:100vh;
+    width:100vw;
+}
+.flex{
+    display:flex;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+}
+.column{
+    flex-direction: column;
+}
+.row{
+    flex-direction: row;
+}
+.full-width{
+    width:100%;
+}
+.prim-clr{
+    color:#FAD827;
+}
+.white-clr{
+    color:white;
+}
+.black-clr{
+    color:black;
+}
+.adm-prim-clr{
+color:#146C94;
+}
+.adm-sec-clr{
+    color:#19A7CE;
+}
+.adm-ter-clr{
+    color:#D9D9D8;
+}
