@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 import "./style.css";
+import "../../styles/global.css";
+import logo from "../../assets/logo.png";
 const TitleLogo = () => {
   return (
     <div>
-      <h1>supp sup</h1>
+      <div className='title-logo flex row center'>
+        <img src={logo} alt="logo"/>
+        <h1>Relaxi Taxi</h1>
+      </div>
     </div>
   )
 }
