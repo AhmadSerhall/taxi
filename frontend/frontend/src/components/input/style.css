@@ -1,5 +1,7 @@
 label{
     margin-bottom: 10px;
+    font-weight: 600;
+    color:Black;
 }
 input{
     height:30px;
