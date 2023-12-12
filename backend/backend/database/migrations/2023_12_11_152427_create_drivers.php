@@ -14,10 +14,14 @@ return new class extends Migration
         Schema::create('drivers', function (Blueprint $table) {
             $table->bigIncrements('driver_id');
             $table->string('status')->default('Pending');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->string('password');
+            $table->char('gender');
+            $table->string('image');
             $table->string('car');
             $table->string('vin');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');;
             $table->timestamps();
 
         });
