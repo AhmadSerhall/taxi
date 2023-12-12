@@ -12,7 +12,7 @@ const RideRequest = ({passenger_location, destination, driver_name, request_date
             setBGc('yellowbg');
         }
     }, [status]);
-
+//:)
     return (
         <div className={`request_card ${BGc}`}>
             <div className='column left'>
