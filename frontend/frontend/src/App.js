@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter,Routes,Route} from 'react-router-dom';
 import SignUp from './pages/signup';
 import Login from './pages/login';
-import RideRequest from './components/ride_request';
 
 function App() {
   return (
@@ -15,6 +14,6 @@ function App() {
       </BrowserRouter>
       </div>
   );
-}
+}//
 
 export default App;
