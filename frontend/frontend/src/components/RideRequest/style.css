@@ -1,0 +1,50 @@
+.redbg{
+    background-color: red;
+}
+
+.greenbg{
+    background-color: green;
+}
+
+.yellowbg{
+    background-color: yellow;
+}
+
+.request_card{
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 2.5% 3% 4%;
+    border-radius: 20px;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.left{
+    align-items: flex-start;
+}
+
+.right{
+    align-items: flex-end;
+}
+
+.center{
+    align-items: center;
+}
+
+.row{
+    display: flex;
+}
+
+.right_txt{
+    text-align: right;
+}
+
+.left_txt{
+    text-align: left;
+    white-space: pre;
+}
