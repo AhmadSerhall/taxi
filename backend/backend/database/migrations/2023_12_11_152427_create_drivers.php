@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->bigIncrements('driver_id');
-            $table->string('status');
+            $table->string('status')->default('Pending');
             $table->string('car');
             $table->string('vin');
             $table->unsignedBigInteger('user_id');

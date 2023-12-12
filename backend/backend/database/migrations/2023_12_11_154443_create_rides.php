@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreign('passenger_id')->references('user_id')->on('users')->onDelete('cascade');;
             $table->string('location_start');
             $table->string('location_end');
-            $table->string('status');
-            $table->integer('price');
+            $table->string('status')->default('Pending');
+            $table->integer('price')->default(20);
             $table->integer('rate_user')->default(null);
             $table->integer('rate_driver')->default(null);
 
