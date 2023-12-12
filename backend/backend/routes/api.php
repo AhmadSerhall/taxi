@@ -46,9 +46,7 @@ Route::controller(RequestsController::class)->group(function () {
     Route::post('create/request', 'create_request');
     Route::post('approve/request', 'approve_request');
 
-});
-    
-    
+    });
     Route::controller(RequestsController::class)->group(function () {
     Route::post('create/request', 'create_request');
     Route::post('approve/request', 'approve_request');
