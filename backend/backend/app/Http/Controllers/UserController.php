@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Driver;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -47,6 +48,8 @@ class UserController extends Controller
 
         if($user_role==1){
             $user=User::find($id);
+            $user->delete();
+
             return response()->json([
                 "status"=>"success",
                 "message"=>"User deleted"
@@ -58,7 +61,6 @@ class UserController extends Controller
                 ]);
             }
            
-            $user->delete();
       
            
         }
