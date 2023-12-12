@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
     Route::post('register', 'register');
+    Route::post('register/driver', 'register_driver');
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
 
@@ -16,8 +17,8 @@ Route::controller(AuthController::class)->group(function () {
 
 
 Route::controller(DriversController::class)->group(function(){
-    Route::post('signup/driver', 'add_driver');
-    Route::post('delete/driver', 'delete_driver');
+
+    Route::delete('delete/driver', 'delete_driver');
     Route::post('approve/driver', 'approve_driver');
 
 

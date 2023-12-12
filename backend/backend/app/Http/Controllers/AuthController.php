@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Models\Driver;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -43,8 +45,42 @@ class AuthController extends Controller
 
     }
 
-    public function register_driver(Request $request){
-        $validator = Validator::make($request->all(), [
+    public function register(Request $request){
+        if($request->type_role==1){        $validator = Validator::make($request->all(), [
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'gender' => 'required|string|max:1',
+            'role_id' => 'required|integer',
+            'image' => 'required|string',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6',
+            'car' => 'required|string',
+            'vin' => 'required|integer',
+        ]);
+
+        $driver = Driver::create([
+            'first_name'=> $request->first_name,
+            'last_name'=> $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'gender'=> $request->gender,
+            'image'=> $request->image,
+            'role_id'=> $request->role_id,
+            'car'=> $request->car,
+            'vin'=> $request->vin,
+        ]);
+
+        $token = Auth::login($driver);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Driver created successfully',
+            'driver' => $driver,
+            'authorisation' => [
+                'token' => $token,
+                'type' => 'bearer',
+            ]
+        ]);}else{
+         $validator = Validator::make($request->all(), [
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'gender' => 'required|string|max:1',
@@ -59,7 +95,6 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'gender'=> $request->gender,
-            'image'=> $request->image,
             'role_id'=> $request->role_id,
         ]);
 
@@ -75,6 +110,8 @@ class AuthController extends Controller
         ]);
     }
 
+    }
+  
     public function logout()
     {
         Auth::logout();
