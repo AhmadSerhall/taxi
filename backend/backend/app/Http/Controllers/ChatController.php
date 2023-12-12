@@ -46,4 +46,31 @@ class ChatController extends Controller
         }
         
     }
+
+    public function getchat(Request $req)
+    {
+        if (auth('driver-api')->user() instanceof Driver && auth('driver-api')->user()) {
+            echo"hello";
+            $driver = auth('driver-api')->user();
+            if ($driver && $driver->role_id == 2) {
+                $request = Chat::all();
+                return response()->json([
+                    'status' => 'Driver Message Sent',
+                    $request
+                ]);
+            }
+        } elseif (Auth::Check()) {
+            echo"hello2";
+            $user = Auth::user();
+            if ($user && $user->role_id == 3) {
+                $request = Chat::all();
+                return response()->json([
+                    'status' => 'User Message Sent',
+                    $request
+                ]);
+            }
+        } else {
+            return response()->json(['error' => 'Unauthorized']);
+        }
+    }
 }

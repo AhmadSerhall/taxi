@@ -48,5 +48,5 @@ Route::controller(RequestsController::class)->group(function () {
 
 Route::controller(ChatController::class)->group(function () {
     Route::post('chat', 'create');
-    
+    Route::get('getchat', 'getchat');
 });
