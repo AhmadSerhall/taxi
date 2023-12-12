@@ -27,6 +27,15 @@
 .black-clr{
     color:black;
 }
+.prim-clr-bg{
+    background-color:#FAD827;
+}
+.white-clr-bg{
+    background-color:white;
+}
+.black-clr-bg{
+    background-color: black;
+}
 .adm-prim-clr{
 color:#146C94;
 }
