@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreign('driver_id')->references('user_id')->on('users')->onDelete('cascade');;
             $table->unsignedBigInteger('passenger_id');
             $table->foreign('passenger_id')->references('user_id')->on('users')->onDelete('cascade');;
-            $table->string('status');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
