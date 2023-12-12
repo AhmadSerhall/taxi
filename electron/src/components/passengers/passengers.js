@@ -1,6 +1,5 @@
 import { sendRequest } from "../../core/request";
 
-sendReuest;
 const Tr = (props) => {
   const deletePassenger = async (passengerId) => {
     try {
