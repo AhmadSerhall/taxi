@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUp from "./pages/signup";
 import Login from "./pages/login";
@@ -9,11 +8,10 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route classname="signup"path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/rating" element={<Rating/>} />  
-          <Route path="/ride" element={<Map/>} />
-          
+          <Route classname="signup" path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/rating" element={<Rating />} />
+          <Route path="/ride" element={<Map />} />
         </Routes>
       </BrowserRouter>
     </div>
