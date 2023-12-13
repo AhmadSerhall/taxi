@@ -1,7 +1,6 @@
 import React from "react";
-
+import "./style.css";
 import "../../styles/global.css";
-// import "../../components/title_logo"
 import TitleLogo from "../../components/title_logo";
 import Input from "../../components/input";
 import Button from "../../components/button";
@@ -17,7 +16,6 @@ const Login = () => {
             name="email"
             placeholder="enter your email"
             label="email"
-            width="400px"
           />
           <Input
             className="input"
@@ -26,7 +24,7 @@ const Login = () => {
             label="password"
           />
           <Button
-            className="button"
+            className="button-login"
             color="black"
             backgroundColor="#D9D9D8"
             text="login"
