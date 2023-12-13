@@ -1,0 +1,22 @@
+.recieved_message{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    width: fit-content;
+    align-self: flex-start;
+    background-color: white;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+.recieved_message_text{
+    padding: 5px 10px 0px 5px;
+}
+
+.recieved_message_date{
+    font-size: 13px;
+    color: grey;
+    align-items: flex-end;
+    text-align: right;
+    margin-top: -15px;
+    padding-right: 5px;
+}

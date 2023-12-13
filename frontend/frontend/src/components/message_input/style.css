@@ -1,0 +1,27 @@
+.message_input{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.input_text{
+    width: 100%;
+}
+
+.send_img{
+    display: flex;
+    height: 23px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.fa-chevron-right{
+    display: flex;
+    align-items: center;
+}
+
+.fas{
+    font-size: 20px;
+}

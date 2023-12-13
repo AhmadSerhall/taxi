@@ -1,0 +1,22 @@
+.sent_message{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    width: fit-content;
+    align-self: flex-end;
+    background-color: white;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+.sent_message_text{
+    padding: 5px 5px 0px 10px;
+}
+
+.sent_message_date{
+    font-size: 13px;
+    color: grey;
+    align-items: flex-end;
+    text-align: right;
+    margin-top: -15px;
+    padding-right: 5px;
+}
