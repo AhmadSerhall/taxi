@@ -4,25 +4,34 @@ import pp from "../../assets/pp.png";
 import "./style.css";
 const Navbar = () => {
   return (
-    <section className="container">
-      <div className="logo">
+    <section className="container-navbar">
+      <div className="logo-navbar">
         <img src={logo} alt="null" />
       </div>
-      <div className="title">
+      <div className="title-navbar">
         <h1>Search Riders</h1>
       </div>
-      <div className="button-container">
-        <a className="btn" onClick={() => this.handleClick("Contact Us")}>
+      <div className="button-container-navbar">
+        <a
+          className="btn-navbar"
+          onClick={() => this.handleClick("Contact Us")}
+        >
           Home
         </a>
-        <a className="btn" onClick={() => this.handleClick("Contact Us")}>
+        <a
+          className="btn-navbar"
+          onClick={() => this.handleClick("Contact Us")}
+        >
           Services
         </a>
-        <a className="btn" onClick={() => this.handleClick("Contact Us")}>
+        <a
+          className="btn-navbar"
+          onClick={() => this.handleClick("Contact Us")}
+        >
           Contact Us
         </a>
       </div>
-      <div className="profile">
+      <div className="profile-navbar">
         <img src={pp} alt="null" />
       </div>
     </section>
