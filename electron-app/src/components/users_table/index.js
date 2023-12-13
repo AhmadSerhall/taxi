@@ -22,7 +22,7 @@ const UsersTable = () => {
             <th>Email</th>
             <th>Trips</th>
             <th>Paid</th>
-            <th></th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody id="tbody">
