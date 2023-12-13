@@ -1,0 +1,10 @@
+.container {
+  margin: 0 10%;
+  padding: 5%;
+  border-radius: 1%;
+}
+.title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
