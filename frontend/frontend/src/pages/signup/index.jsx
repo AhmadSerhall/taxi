@@ -10,7 +10,6 @@ import Navbar from '../../components/navbar';
 const SignUp = () => {
     const dropdownOptions = ['Male', 'Female'];
     const dropdownOptions2 = ['passenger', 'driver'];
-
   return (
     <div>
       <Button backgroundColor='#FADC3D' textColor='white' text='login' />
