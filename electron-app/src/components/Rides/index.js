@@ -2,7 +2,7 @@ import { sendRequest } from "../../core/request";
 import { useEffect, useState } from "react";
 import Tr from "../Drivers/Drivers";
 
-const Rides = () => {
+const RidesComponent = () => {
   const [data, setData] = useState("");
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Rides = () => {
             <th>From-To</th>
             <th>Status</th>
             <th>Price</th>
-            <th></th>
+            <th>Feedback</th>
           </tr>
         </thead>
         <tbody id="tbody">
@@ -43,4 +43,4 @@ const Rides = () => {
   );
 };
 
-export default Rides;
+export default RidesComponent;

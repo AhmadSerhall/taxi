@@ -233,6 +233,13 @@ a {
   text-align: center;
 }
 @media only screen and (max-width: 600px) {
+  .side-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: #1363df;
+    width: fit-content;
+    min-height: 40vh;
+  }
   .header h1 {
     position: static;
     font-size: 3rem;
@@ -262,6 +269,7 @@ a {
     border-radius: 40px;
     width: 50%;
   }
+
   .header h1 {
     position: static;
     font-size: 3rem;
