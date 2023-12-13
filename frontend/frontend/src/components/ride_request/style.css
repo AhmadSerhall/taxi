@@ -25,3 +25,14 @@
   width: 50%;
   padding: 10px;
 }
+
+@media only screen and (max-width: 900px) {
+  .request_card_r {
+    width: 90%;
+    padding: 10px;
+  }
+  .request_card_l {
+    width: 90%;
+    padding: 10px;
+  }
+}

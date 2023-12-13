@@ -4,3 +4,9 @@
 .main-container {
   padding: 50px;
 }
+@media only screen and (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
