@@ -1,8 +1,12 @@
 import React from "react";
-import LocationComponent from "../../components/location/LocationComponent";
+import LeafletMap from "../../components/location/LeafletMap";
 
 const Location = () => {
-  return <LocationComponent />;
+  return (
+    <div>
+      <h1>Leaflet Map</h1>
+      <LeafletMap />
+    </div>
+  );
 };
-
 export default Location;
