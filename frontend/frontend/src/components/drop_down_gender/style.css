@@ -7,7 +7,7 @@
   .dropdown-header {
     cursor: pointer;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 15 15 0px;
   }
   
@@ -21,7 +21,7 @@
     border: 1px solid #ccc;
     border-top: none;
     border-radius: 0 0 14px 14px;
-    background-color: #FAD827;
+    background-color: red;
   }
   
   .dropdown-options li {

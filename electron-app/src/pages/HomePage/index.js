@@ -1,6 +1,7 @@
 import dashboard from "../../../../electron-app/src/components/Dashboard/dashboard";
 import Adminheader from "../../../../electron-app/src/components/admin_header";
 import AdminSidebar from "../../../../electron-app/src/components/admin_sidebar";
+import Chat from "../../../../electron-app/src/components/chat";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
           </h1>
         </div>
       </div>
+      <Chat />
     </body>
   );
 };
