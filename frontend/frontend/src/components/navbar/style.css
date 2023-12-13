@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.container {
+.container-navbar {
   margin-top: 2%;
   padding: 0 10%;
   display: flex;
@@ -13,78 +13,78 @@
   width: 100%;
   height: 80px;
 }
-.logo {
+.logo-navbar {
   display: flex;
 }
-.logo img {
+.logo-navbar img {
   height: 100px;
   width: 100px;
 }
-.title {
+.title-navbar {
   margin-right: 15%;
   display: flex;
 }
-.title h1 {
+.title-navbar h1 {
   font-size: 24px;
   font-weight: 1000;
 }
-.profile {
+.profile-navbar {
   margin: 0 10px;
   display: flex;
 }
-.profile img {
+.profile-navbar img {
   height: 70px;
   width: 70px;
 }
-.button-container {
+.button-container-navbar {
   display: flex;
 }
-.button-container a {
+.button-container-navbar a {
   font-size: 18px;
   font-weight: 1000;
   cursor: pointer;
   margin-left: 10px;
 }
 @media only screen and (max-width: 968px) {
-  .container {
+  .container-navbar {
     height: 70px;
     padding: 0 10%;
   }
-  .logo img {
+  .logo-navbar img {
     height: 80px;
     width: 80px;
   }
 
-  .title h1 {
+  .title-navbar h1 {
     font-size: 16px;
   }
 
-  .profile img {
+  .profile-navbar img {
     height: 50px;
     width: 50px;
   }
 }
 
 @media only screen and (max-width: 580px) {
-  .container {
+  .container-navbar {
     padding: 0 5%;
   }
-  .logo img {
+  .logo-navbar img {
     height: 80px;
     width: 60px;
   }
 
-  .title h1 {
+  .title-navbar h1 {
     font-size: 16px;
   }
 
-  .profile img {
+  .profile-navbar img {
     height: 30px;
     width: 30px;
     margin-right: 10%;
   }
 
-  .button-container a {
+  .button-container-navbar a {
     font-size: 16px;
   }
 }
