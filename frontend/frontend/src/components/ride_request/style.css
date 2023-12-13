@@ -1,50 +1,38 @@
-.redbg{
-    background-color: red;
+.redbg {
+  background-color: #d9928d;
 }
 
-.greenbg{
-    background-color: green;
+.greenbg {
+  background-color: #a1d98d;
 }
 
-.yellowbg{
-    background-color: yellow;
+.yellowbg {
+  background-color: #d9c88d;
 }
 
-.request_card{
-    display: flex;
-    justify-content: space-between;
-    padding: 0% 2.5% 3% 4%;
-    border-radius: 20px;
-    width: fit-content;
-    margin-bottom: 30px;
+.container {
 }
 
-.column{
-    display: flex;
-    flex-direction: column;
+.request_card {
+  height: 30%;
+  border-radius: 30px;
+}
+.request_card_r {
+  width: 50%;
+  padding: 10px;
+}
+.request_card_l {
+  width: 50%;
+  padding: 10px;
 }
 
-.left{
-    align-items: flex-start;
-}
-
-.right{
-    align-items: flex-end;
-}
-
-.center{
-    align-items: center;
-}
-
-.row{
-    display: flex;
-}
-
-.right_txt{
-    text-align: right;
-}
-
-.left_txt{
-    text-align: left;
-    white-space: pre;
+@media only screen and (max-width: 900px) {
+  .request_card_r {
+    width: 90%;
+    padding: 10px;
+  }
+  .request_card_l {
+    width: 90%;
+    padding: 10px;
+  }
 }

@@ -1,65 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import './style.css';
+import React, { useEffect, useState } from "react";
+import "./style.css";
 
-const RideRequest = ({passenger_location, destination, driver_name, request_date, status, rate}) => {
-    const [BGc, setBGc] = useState('grey');
-    useEffect(() => {
-        if (status === 'Completed'){
-            setBGc('greenbg');
-        }else if (status === 'Abandoned'){
-            setBGc('redbg')
-        }else if (status === 'Pending'){
-            setBGc('yellowbg');
-        }
-    }, [status]);
-//:)
-    return (
-        <div className={`request_card ${BGc}`}>
-            <div className='column left'>
-                <div className='row'>
-                    <p className='txt'>FROM: {passenger_location}</p>
-                </div>
-                <div className='row'>
-                    <p className='txt'>To: {destination}</p>
-                </div>
-                <div className='row'>
-                    <p className='txt'>Driver Name: {driver_name}</p>
-                </div>
-            </div>
+const RideRequest = ({ passenger_location, destination, driver_name, request_date, status, rate }) => {
+  const [BGc, setBGc] = useState("grey");
+  useEffect(() => {
+    if (status === "Approved") {
+      setBGc("greenbg");
+    } else if (status === "Rejected") {
+      setBGc("redbg");
+    } else if (status === "Pending") {
+      setBGc("yellowbg");
+    }
+  }, [status]);
 
-            <div className='row center'>
+  return (
+    <div className={`flex request_card ${BGc} space-around`}>
+      <div className="request_card_r flex column space-around">
+        <p className="txt">FROM: {passenger_location}</p>
 
-                <div className='column right'>
+        <p className="txt">To: {destination}</p>
 
-                    <div className='row'>
-                    <p className='txt right_txt'>Request Date: </p>
-                    </div>
-                    <div className='row'>
-                    <p className='txt right_txt'>Status: </p>
-                    </div>
-                    <div className='row'>
-                    <p className='txt right_txt'>Rate: </p>
-                    </div>
+        <p className="txt">Driver Name: {driver_name}</p>
+      </div>
+      <div className="request_card_r flex column space-around">
+        <p className="txt">Request Date: {request_date}</p>
 
-                </div>
+        <p className="txt">Status: {status}</p>
 
-                <div className='column left'>
-
-                    <div className='row'>
-                    <p className='txt left_txt'>    {request_date}</p>
-                    </div>
-                    <div className='row'>
-                    <p className='txt left_txt'>    {status}</p>
-                    </div>
-                    <div className='row'>
-                    <p className='txt left_txt'>    {rate}</p>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    );
+        <p className="txt">Rate: {rate}</p>
+      </div>
+    </div>
+  );
 };
 
 export default RideRequest;
