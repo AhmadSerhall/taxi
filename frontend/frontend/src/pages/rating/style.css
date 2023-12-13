@@ -1,0 +1,60 @@
+body {
+    background-color: #F8F9FA;
+   }
+   
+   .congratulation-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #333333;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top:40px;
+   }
+   
+   .congratulation-message {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top:20px;
+   }
+   
+   .congratulation-message h1 {
+    font-size: 32px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 10px;
+   }
+   
+   .congratulation-message p {
+    font-size: 18px;
+    color: white;
+   }
+   
+   .congratulation-rate {
+    text-align: center;
+   }
+   
+   .congratulation-rate p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 20px;
+   }
+   
+   button {
+    align-self: center;
+   }
+   button:hover {
+    background-color:#FADC3D;
+    color:black;
+   }
+
+.star-rating {
+    font-size: 16px; 
+    margin-right: 5px; 
+    display: flex;
+  }
+  .star-rating img{
+    width:50px;
+    height:50px;
+  }
+  
