@@ -3,10 +3,12 @@ import Button from "../../components/button"
 import logo from "../../assets/logo.png";
 import pp from "../../assets/pp.png";
 import "./style.css";
+import AdvantagesWrapper from '../../components/advantages/dvantages_wrapper';
 import home_background from "../../assets/home_background.png"
 
 const HomePage = () => {
     return(
+    <>
         <div className='homepage'>
             <div className='home_img'>
                 <img src= {home_background} alt="home_background" />
@@ -31,7 +33,7 @@ const HomePage = () => {
 
                 <div className='home_content'>
 
-                    <div>
+                    <div className='home_content_txt'>
                         <p>Discover Seamless Transportation with Relax Taxi.</p>
                     </div>
 
@@ -39,6 +41,9 @@ const HomePage = () => {
                 </div>
             </div>
         </div>
+        <AdvantagesWrapper/>
+
+    </>
     )
 
 }
