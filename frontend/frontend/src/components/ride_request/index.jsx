@@ -6,7 +6,7 @@ const RideRequest = ({ passenger_location, destination, driver_name, request_dat
   useEffect(() => {
     if (status === "Approved") {
       setBGc("greenbg");
-    } else if (status === "Abandoned") {
+    } else if (status === "Rejected") {
       setBGc("redbg");
     } else if (status === "Pending") {
       setBGc("yellowbg");
@@ -15,14 +15,14 @@ const RideRequest = ({ passenger_location, destination, driver_name, request_dat
 
   return (
     <div className={`flex request_card ${BGc} space-around`}>
-      <div className="request_card_r flex column">
+      <div className="request_card_r flex column space-around">
         <p className="txt">FROM: {passenger_location}</p>
 
         <p className="txt">To: {destination}</p>
 
         <p className="txt">Driver Name: {driver_name}</p>
       </div>
-      <div className="request_card_r flex column">
+      <div className="request_card_r flex column space-around">
         <p className="txt">Request Date: {request_date}</p>
 
         <p className="txt">Status: {status}</p>

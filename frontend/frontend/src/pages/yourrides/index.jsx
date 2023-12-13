@@ -7,10 +7,11 @@ const YourRides = () => {
   return (
     <>
       <Navbar />
-      <div className="flex space-around">
+      <div className="main-container flex space-around">
         <div className="requests flex column gap">
           <RideRequest status={"Pending"} />
           <RideRequest status={"Approved"} />
+          <RideRequest status={"Rejected"} />
         </div>
 
         <RequestForm />
