@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class RiderController extends Controller
+class RideController extends Controller
 {
 public function approve_ride(Request $req){
     if(Auth::check()){
