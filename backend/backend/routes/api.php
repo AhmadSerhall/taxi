@@ -38,7 +38,7 @@ Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
 
 
 Route::controller(RideController::class)->group(function () {
-    Route::post('approve/ride', 'approve_ride');
+    Route::post('finish/ride', 'finish_ride');
 });
 
 Route::controller(RequestsController::class)->group(function () {
@@ -46,10 +46,6 @@ Route::controller(RequestsController::class)->group(function () {
     Route::post('approve/request', 'approve_request');
 
     });
-    Route::controller(RequestsController::class)->group(function () {
-    Route::post('create/request', 'create_request');
-    Route::post('approve/request', 'approve_request');
-});
 
 Route::controller(ChatController::class)->group(function () {
     Route::post('chat', 'create');
