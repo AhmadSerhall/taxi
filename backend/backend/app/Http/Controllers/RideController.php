@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class RideController extends Controller
 {
 public function approve_ride(Request $req){
-    if(Auth::check()){
+    if(auth('driver-api')->user()){
         $user = Auth::user();
         return response()->json($user);
     }
