@@ -13,7 +13,6 @@ function App() {
       <Route path="/admin_panel" element={<HomePage />} />
       <Route path="/admin_panel/drivers" element={<DriversTable />} />
       <Route path="/admin_panel/passengers" element={<Passengers />} />
-      {/* <Route path="/admin_panel/rides" element={<Rides />} /> */}
     </Routes>
   );
 }
