@@ -1,0 +1,26 @@
+label {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: Black;
+}
+input {
+  height: 40px;
+  width: 400px;
+  border-radius: 12px;
+  background-color: #d9d9d8;
+  padding-left: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+@media only screen and (max-width: 600px) {
+  input {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  input {
+    width: 80%;
+  }
+}

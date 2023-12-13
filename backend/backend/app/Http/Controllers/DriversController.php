@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 
 
-class DriversController extends Controller
+class DriversController extends Controller  
 {
         public function __construct()
     {
@@ -166,10 +166,7 @@ public function login(Request $request)
                      "message"=>"User not found"   
                 ]);
             }
-                           return response()->json([
-                    "status"=>"error",
-                     "message"=>"User not found"   
-                ]);
+                         
           
         }
     }
