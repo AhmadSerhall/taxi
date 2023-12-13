@@ -8,8 +8,6 @@ use App\Http\Controllers\DriversController;
 use App\Http\Controllers\RequestsController;
 use App\Http\Controllers\RideController;
 use App\Http\Controllers\UserController;
-
-
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
     Route::post('register', 'register');
@@ -37,6 +35,7 @@ Route::controller(DriversController::class)->group(function(){
 
 Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
 
+
 Route::controller(RideController::class)->group(function () {
     Route::post('approve/ride', 'approve_ride');
 });
@@ -46,7 +45,6 @@ Route::controller(RequestsController::class)->group(function () {
     Route::post('approve/request', 'approve_request');
 
     });
-    
     Route::controller(RequestsController::class)->group(function () {
     Route::post('create/request', 'create_request');
     Route::post('approve/request', 'approve_request');
