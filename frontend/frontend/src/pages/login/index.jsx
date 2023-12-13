@@ -1,7 +1,6 @@
 import React from 'react'
 import "./style.css";
 import "../../styles/global.css"
-// import "../../components/title_logo"
 import TitleLogo from '../../components/title_logo';
 import Input from "../../components/input";
 import Button from '../../components/button';
@@ -14,7 +13,7 @@ const Login = () => {
         <h1 className='title'>Login</h1>
         <Input className="input"name="email" placeholder="enter your email" label="email" width="400px"/>
         <Input  className="input"name="password" placeholder="enter your password" label="password" />
-        <Button className="button" color="black" backgroundColor="#D9D9D8"text="login"/>
+        <Button className="button"color="black" backgroundColor="#D9D9D8"text="login" onClick={console.log("logged in pressed")}/>
         </div>
       </div>
     </div>
