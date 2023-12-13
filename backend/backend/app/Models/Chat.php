@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Crequest extends Model
+class Chat extends Model
 {
     use HasFactory;
-    protected $fillable = ['driver_id','user_id'];
+    protected $fillable = ['ride_id','sender_id','receiver_id','message_content'];
 }
