@@ -67,4 +67,10 @@ class User extends Authenticatable implements JWTSubject
           'role_id'=>$this->role_id,
         ];
     }
+
+    public function rides()
+    {
+        return $this->hasMany(Ride::class, 'user_id', 'user_id');
+    }
+
 }

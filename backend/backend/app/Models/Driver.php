@@ -64,4 +64,8 @@ class Driver extends Authenticatable implements JWTSubject
           'role_id'=>$this->role_id,
         ];
     }
+    public function rides()
+    {
+        return $this->hasMany(Ride::class, 'driver_id', 'driver_id');
+    }
 }

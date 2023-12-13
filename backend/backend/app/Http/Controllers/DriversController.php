@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 
 
-class DriversController extends Controller
+class DriversController extends Controller  
 {
         public function __construct()
     {

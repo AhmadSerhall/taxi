@@ -8,6 +8,7 @@ use App\Http\Controllers\DriversController;
 use App\Http\Controllers\RequestsController;
 use App\Http\Controllers\RideController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RideController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
