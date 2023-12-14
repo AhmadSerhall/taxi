@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route classname="signup" path="/signup" element={<SignUp />} />
-          <Route path="/landing" element={<Landing />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/ride" element={<Map />} />
           {/* <Route path="/location" element={<Location />} /> */}
