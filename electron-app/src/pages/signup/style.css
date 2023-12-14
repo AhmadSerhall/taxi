@@ -1,0 +1,77 @@
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.label-pass {
+  margin-right: 20px;
+}
+.label-email {
+  margin-right: 48px;
+}
+
+.container-signup {
+  padding: 5%;
+  border-radius: 20px;
+  background-color: yellow;
+  width: 48rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup {
+  display: block;
+}
+
+.name-inputs {
+  display: flex;
+  gap: 22px;
+}
+.name-inputs input {
+  width: max-content;
+}
+.email-input,
+.password-input {
+  margin-top: 20px;
+}
+.email-input input,
+.password-input input {
+  width: 83%;
+}
+select {
+  border: none;
+}
+label {
+  margin-top: 1%;
+  text-align: left;
+  font-size: 16px;
+}
+.dropdowns {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  gap: 10.5%;
+}
+.btn-signup {
+  display: block;
+  margin-left: 6rem;
+}
+@media only screen and (max-width: 900px) {
+  .container-signup {
+    width: 100%;
+    display: block;
+  }
+
+  .name-inputs,
+  .dropdowns,
+  .btn-signup {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn-signup button {
+    width: 120px;
+  }
+}
