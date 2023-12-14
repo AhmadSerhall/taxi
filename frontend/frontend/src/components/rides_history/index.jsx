@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
+import axios from "axios";
 const RidesHistory = ({ passenger_location, destination, driver_name, request_date, status, rate }) => {
+  const [ride, setRide] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/get_doctors.php")
+      .then(function (res) {
+        setRide(res.data);
+      })
+      .catch(function (error) {
+        console.log("error");
+      });
+  }, []);
   return (
     <div>
       <div className="container-rides flex column">

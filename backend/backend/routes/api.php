@@ -32,6 +32,7 @@ Route::controller(DriversController::class)->group(function(){
     Route::post('login/driver', 'login');
     Route::post('register/driver', 'register');
     Route::post('logout/driver', 'logout');
+    Route::get('all/driver', 'get_drivers');
 });
 
 Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
