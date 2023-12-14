@@ -129,7 +129,7 @@ public function login(Request $request)
             $driver_id=Driver::find($req->driver_id);
             if($driver_id){
             if($req->respond=="Approved"){
-        $driver = Driver::where('driver_id',$req->driver_id)->update(['status'=>$req->status,]);
+        $driver = Driver::where('driver_id',$req->driver_id)->update(['status'=>'Approved',]);
          return response()->json(['User apporved successfully']);
             }else{
                 $driver = Driver::where('driver_id' , $req->driver_id)->delete();
@@ -169,6 +169,11 @@ public function login(Request $request)
                          
           
         }
+    }
+
+    public function get_drivers(){
+        $driver= Driver::all();
+        return response()->json([$driver]);
     }
 
 }

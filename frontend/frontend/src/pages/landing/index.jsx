@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <div>
       <header>
-        <nav className="flex center space-around">
+        <nav className="container-hero-section flex center space-around">
           <div>
             <img src={logo} alt="" />
           </div>
