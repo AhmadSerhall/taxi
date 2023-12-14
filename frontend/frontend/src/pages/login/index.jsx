@@ -1,57 +1,72 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
 import "../../styles/global.css";
 import TitleLogo from "../../components/title_logo";
 import Input from "../../components/input";
 import Button from "../../components/button";
+import { useState } from "react";
 import axios from "axios";
+import { Link,useNavigate } from "react-router-dom";
+
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
 
-  const handleLogin = async () => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/getchat", {
-        email,
-        password,
-      });
-      console.log("Login successful:", response.data);
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/login",
+        formData
+      );
+      console.log(response.data);
+    navigate('/landing');
+
     } catch (error) {
-      console.error("Login failed:", error.message);
+      console.error("Error during form submission:", error);
     }
   };
   return (
-    <div className="center">
+    <section>
       <TitleLogo />
-      <div className="container flex center prim-clr-bg">
+      <form onSubmit={handleSubmit} className="container-login">
         <div className="items flex column">
           <h1 className="title">Login</h1>
-          <Input
-            className="input"
+          <label>Email</label>
+          <input
             name="email"
-            placeholder="Enter your email"
-            label="Email"
-            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            onChange={handleChange}
+            placeholder="Enter your Email"
+            required
           />
-          <Input
-            className="input"
+          <label>Password</label>
+          <input
             name="password"
             type="password"
-            placeholder="Enter your password"
-            label="Password"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handleChange}
+            placeholder="Enter your Password"
+            required
           />
-          <Button
-            className="button-login"
-            color="black"
-            backgroundColor="#D9D9D8"
-            text="Login"
-            onClick={handleLogin}
-          />
+          <div className="btn-submit">
+            <Button type="submit" text="login" />
+          </div>
+          <div className="create-acc">
+          <Link to="/signup" >Create a new account</Link>
+          </div>
+            
+          
         </div>
-      </div>
-    </div>
+      </form>
+    </section>
   );
 };
 

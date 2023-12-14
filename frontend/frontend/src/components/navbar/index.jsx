@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo.png";
 import pp from "../../assets/pp.png";
-import "./style.css";
+import "./style-navbar.css";
 const Navbar = () => {
   return (
     <section className="container-navbar">
@@ -9,7 +9,7 @@ const Navbar = () => {
         <img src={logo} alt="null" />
       </div>
       <div className="title-navbar">
-        <h1>Search Riders</h1>
+        {/* <h1>Search Riders</h1> */}
       </div>
       <div className="button-container-navbar">
         <a
@@ -31,9 +31,9 @@ const Navbar = () => {
           Contact Us
         </a>
       </div>
-      <div className="profile-navbar">
+      {/* <div className="profile-navbar">
         <img src={pp} alt="null" />
-      </div>
+      </div> */}
     </section>
   );
 };

@@ -1,38 +1,84 @@
-.center{
-  display:flex;
+section {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right:200px;
-  margin-left:200px;
 }
-.container {
-  margin: 0 10%;
-  padding: 5%;
-  border-radius: 1%;
+.label-pass {
+  margin-right: 20px;
 }
-.title {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+.label-email {
+  margin-right: 48px;
 }
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    width:50vw;
-    border-radius: 15px;
-  } */
-  
 
-  .title{
-    display:flex;
-    align-items: flex-start;
-    justify-content: center;
-    margin-top:40px;
-    margin-bottom: 40px;
+.container-login {
+  padding: 5%;
+  border-radius: 20px;
+  background-color: yellow;
+  width: 48rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup {
+  display: block;
+}
+
+.name-inputs {
+  display: flex;
+  gap: 22px;
+}
+.name-inputs input {
+  width: max-content;
+}
+.email-input,
+.password-input {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.email-input input,
+.password-input input {
+  width: 83%;
+}
+select {
+  border: none;
+}
+label {
+  margin-top: 1%;
+  text-align: left;
+  font-size: 16px;
+}
+.dropdowns {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  gap: 10.5%;
+  margin-bottom: 10%;
+}
+.btn-submit {
+  display: block;
+}
+.create-acc{
+  text-decoration:none;
+  text-align: center;
+  margin-top:20px;
+  margin-left: 12%;
+}
+@media only screen and (max-width: 900px) {
+  .container-signup {
+    width: 100%;
+    display: block;
   }
-  .button{
-    margin-left:120px;
+
+  .name-inputs,
+  .dropdowns,
+  .btn-submit {
+    width: 100%;
+    gap: 10px;
   }
- 
+
+  .btn-submit button {
+    width: 120px;
+  }
+}
