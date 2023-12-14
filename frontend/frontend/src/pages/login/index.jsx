@@ -15,7 +15,6 @@ const Login = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
@@ -24,7 +23,6 @@ const Login = () => {
         "http://127.0.0.1:8000/api/login",
         formData
       );
-
       console.log(response.data);
     } catch (error) {
       console.error("Error during form submission:", error);
@@ -33,16 +31,23 @@ const Login = () => {
   return (
     <section>
       <TitleLogo />
-      <form onSubmit={handleSubmit} className="container">
+      <form onSubmit={handleSubmit} className="container-login">
         <div className="items flex column">
           <h1 className="title">Login</h1>
           <label>Email</label>
-          <input name="email" type="email" onChange={handleChange} required />
+          <input
+            name="email"
+            type="email"
+            onChange={handleChange}
+            placeholder="Enter your Email"
+            required
+          />
           <label>Password</label>
           <input
             name="password"
             type="password"
             onChange={handleChange}
+            placeholder="Enter your Password"
             required
           />
           <div className="btn-submit">

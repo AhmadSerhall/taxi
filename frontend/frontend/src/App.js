@@ -16,7 +16,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/ride" element={<Map />} />
-          <Route path="/" element={<HomePage />} />
         </Routes>
       </BrowserRouter>
     </div>

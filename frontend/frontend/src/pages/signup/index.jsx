@@ -1,17 +1,10 @@
-// SignUp.js
-
 import React from "react";
 import TitleLogo from "../../components/title_logo";
 import Button from "../../components/button";
-import Input from "../../components/input";
-import Dropdown from "../../components/drop_down_gender";
-import Dropdown2 from "../../components/drop_down_type";
 import axios from "axios";
 import { useState } from "react";
 import "../../styles/global.css";
-import "./style.css"; // Import the style.css file
-
-import Navbar from "../../components/navbar";
+import "./style.css";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +20,8 @@ const SignUp = () => {
   };
 
   const handleSubmit = async (event) => {
-    if (formData.role_id || formData.gender) {
+    event.preventDefault();
+    if (formData.role_id == 3) {
       console.log(formData);
       try {
         const response = await axios.post(
@@ -36,11 +30,19 @@ const SignUp = () => {
         );
         console.log(response.data);
       } catch (error) {
-        console.error("Please select your gender");
+        console.error(error);
       }
     } else {
-      const x = document.getElementById("visible");
-      x.innerText = "Gender and Role Required";
+      console.log(formData);
+      try {
+        const response = await axios.post(
+          "http://127.0.0.1:8000/api/register/driver",
+          formData
+        );
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
@@ -49,6 +51,8 @@ const SignUp = () => {
       <TitleLogo />
       <form onSubmit={handleSubmit} className="container-signup">
         <div className="signup">
+          <h1 className="title">Register</h1>
+          <br></br>
           <div className="name-inputs">
             <label>First Name</label>
             <input
@@ -68,7 +72,7 @@ const SignUp = () => {
             />
           </div>
           <div className="email-input">
-            <label class="label-email">Email:</label>
+            <label className="label-email">Email:</label>
 
             <input
               name="email"
