@@ -35,6 +35,7 @@ Route::controller(DriversController::class)->group(function(){
 });
 
 Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
+Route::get('get_all_drivers', [DriversController::class, 'get_all_drivers']);
 
 
 Route::controller(RideController::class)->group(function () {

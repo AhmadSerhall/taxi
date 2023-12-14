@@ -17,6 +17,15 @@ class DriversController extends Controller
         $this->middleware('auth:driver-api', ['except' => ['login','register']]);
     }
 
+    public function get_all_drivers()
+    {
+        $drivers= Driver::all();
+        return response()->json([
+            "status" => "success",
+            "data" =>$drivers,
+        ]);
+    }
+
 public function login(Request $request)
 {
     $request->validate([

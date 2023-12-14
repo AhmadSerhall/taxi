@@ -1,21 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { sendRequest } from "../../../../electron-app/src/core/request";
+import axios from "axios";
 
 const AdminHeader = () => {
   const navigate = useNavigate();
   const handleLogoutClick = async () => {
     try {
-      const data = await sendRequest({
-        route: "logout",
-        method: "POST",
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
-      console.log(data);
-
-      if (data.status === "success") {
+      console.log("HELLO");
+      const response = await axios.post("http://localhost:8000/api/logout");
+      console.log(response);
+      console.log(response.status);
+      if (response) {
         navigate("/");
       }
     } catch (error) {

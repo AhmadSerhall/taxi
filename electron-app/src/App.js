@@ -14,6 +14,7 @@ function App() {
       <Route path="/admin_panel/drivers" element={<DriversTable />} />
       <Route path="/admin_panel/passengers" element={<Passengers />} />
       <Route path="/admin_panel/rides" element={<Rides />} />
+      {/* <Route path="/logout" element={<Logout />} /> */}
     </Routes>
   );
 }
