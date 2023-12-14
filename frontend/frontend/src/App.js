@@ -15,11 +15,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route classname="signup" path="/signup" element={<SignUp />} />
-          <Route path="/" element={<DriversRequest />} />
+          <Route path="/" element={<Login/>} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/ride" element={<Map />} />
+          <Route path="/landing" element={<Landing />} />
           {/* <Route path="/location" element={<Location />} /> */}
           <Route path="/yourride" element={<YourRides />} />
+          <Route path="/request" element={<DriversRequest />} />
         </Routes>
       </BrowserRouter>
     </div>

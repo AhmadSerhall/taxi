@@ -22,8 +22,9 @@ const YourRides = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <Navbar />
+
       <div className="main-container flex space-around">
         <div className="requests flex column gap">
           <RideRequest status={"Pending"} />
@@ -33,7 +34,7 @@ const YourRides = () => {
 
         <RequestForm />
       </div>
-    </>
+      </div>
   );
 };
 

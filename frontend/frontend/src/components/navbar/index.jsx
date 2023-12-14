@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "../../assets/logo.png";
 import pp from "../../assets/pp.png";
-import "./style.css";
+import "./style-nav.css";
 const Navbar = () => {
   return (
-    <section className="container-navbar">
+    <div className="container-navbar">
       <div className="logo-navbar">
         <img src={logo} alt="null" />
       </div>
@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="profile-navbar">
         <img src={pp} alt="null" />
       </div>
-    </section>
+    </div>
   );
 };
 export default Navbar;
