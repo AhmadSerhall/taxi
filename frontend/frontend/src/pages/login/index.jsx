@@ -31,12 +31,9 @@ const Login = () => {
     }
   };
   return (
-    <div className="center">
+    <section>
       <TitleLogo />
-      <form
-        onSubmit={handleSubmit}
-        className="container flex center prim-clr-bg"
-      >
+      <form onSubmit={handleSubmit} className="container">
         <div className="items flex column">
           <h1 className="title">Login</h1>
           <label>Email</label>
@@ -48,16 +45,12 @@ const Login = () => {
             onChange={handleChange}
             required
           />
-          <Button
-            type="submit"
-            className="button-login"
-            color="black"
-            backgroundColor="#D9D9D8"
-            text="login"
-          />
+          <div className="btn-submit">
+            <Button type="submit" text="login" />
+          </div>
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 

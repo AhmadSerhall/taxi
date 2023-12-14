@@ -1,14 +1,21 @@
 section {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.label-pass {
+  margin-right: 20px;
+}
+.label-email {
+  margin-right: 48px;
 }
 
 .container-signup {
-  margin: 0 20%;
   padding: 5%;
-  border-radius: 1%;
   border-radius: 20px;
   background-color: yellow;
-  width: 800px;
+  width: 48rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,79 +25,53 @@ section {
   display: block;
 }
 
+.name-inputs {
+  display: flex;
+  gap: 22px;
+}
 .name-inputs input {
-  gap: 10px;
   width: max-content;
 }
 .email-input,
 .password-input {
   margin-top: 20px;
-  margin-bottom: 10px;
 }
-
+.email-input input,
+.password-input input {
+  width: 83%;
+}
+select {
+  border: none;
+}
+label {
+  margin-top: 1%;
+  text-align: left;
+  font-size: 16px;
+}
 .dropdowns {
+  height: 40px;
   width: 100%;
   display: flex;
-  gap: 30px;
-  margin-bottom: 10%;
+  gap: 10.5%;
 }
 .btn-signup {
   display: block;
-}
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-right: 200px;
-  margin-left: 200px;
-}
-input {
-  border: none;
-  height: 40px;
-  width: 400px;
-  border-radius: 12px;
-  background-color: #d9d9d8;
-  padding-left: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s ease;
-}
-select {
-  border-radius: 12px;
-  background-color: #d9d9d8;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s ease;
-  border: none;
-}
-.label {
-  text-align: left;
-  width: 100px;
+  margin-left: 6rem;
 }
 @media only screen and (max-width: 900px) {
   .container-signup {
-    margin: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vh;
+    width: 100%;
+    display: block;
   }
 
   .name-inputs,
-  .email-input,
-  .password-input,
   .dropdowns,
   .btn-signup {
-    width: 250px;
-    gap: 20px;
-  }
-
-  .name-inputs {
-    flex-direction: column;
+    width: 100%;
     gap: 10px;
   }
 
-  .dropdowns {
-    margin-bottom: 5%;
+  .btn-signup button {
+    width: 120px;
   }
 }

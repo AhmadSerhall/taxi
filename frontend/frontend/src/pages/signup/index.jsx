@@ -50,50 +50,45 @@ const SignUp = () => {
       <form onSubmit={handleSubmit} className="container-signup">
         <div className="signup">
           <div className="name-inputs">
-            <label htmlFor="first_name">First Name:</label>
+            <label>First Name</label>
             <input
               onChange={handleChange}
               className="name-input"
               name="first_name"
-              id="first_name"
+              label="First Name"
               placeholder="Enter your First Name"
             />
-            <label htmlFor="last_name">Last Name:</label>
+            <label>Last Name</label>
             <input
               onChange={handleChange}
               className="name-input"
               name="last_name"
-              id="last_name"
+              label="Last Name"
               placeholder="Enter your Last Name"
             />
           </div>
           <div className="email-input">
-            <label htmlFor="email">Email:</label>
+            <label class="label-email">Email:</label>
+
             <input
               name="email"
-              id="email"
+              label="Email"
               onChange={handleChange}
               placeholder="Enter your Email"
             />
           </div>
           <div className="password-input">
-            <label htmlFor="password">Password:</label>
+            <label className="label-pass">Password: </label>
             <input
               onChange={handleChange}
               name="password"
-              id="password"
-              type="password"
+              label="Password"
               placeholder="Enter your Password"
             />
           </div>
           <div className="dropdowns">
             <label htmlFor="genderDropdown">Select Gender:</label>
-            <select
-              name="gender"
-              id="genderDropdown"
-              onChange={handleChange}
-              defaultValue=""
-            >
+            <select name="gender" onChange={handleChange} defaultValue="">
               <option disabled value="">
                 Select Gender
               </option>
@@ -102,12 +97,7 @@ const SignUp = () => {
             </select>
 
             <label htmlFor="roleDropdown">Select Role:</label>
-            <select
-              name="role_id"
-              id="roleDropdown"
-              onChange={handleChange}
-              defaultValue=""
-            >
+            <select name="role_id" onChange={handleChange} defaultValue="">
               <option disabled value="">
                 Select Role
               </option>
@@ -118,14 +108,14 @@ const SignUp = () => {
           <div>
             <label id="visible"></label>
           </div>
-        </div>
-        <div className="btn-signup">
-          <Button
-            type="submit"
-            backgroundColor="D9D9D8"
-            textColor="black"
-            text="Sign Up"
-          />
+          <div className="btn-signup">
+            <Button
+              type="submit"
+              backgroundColor="D9D9D8"
+              textColor="black"
+              text="Sign Up"
+            />
+          </div>
         </div>
       </form>
     </section>

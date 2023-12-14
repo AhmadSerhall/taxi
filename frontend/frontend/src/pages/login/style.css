@@ -1,51 +1,78 @@
-.center {
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 200px;
-  margin-left: 200px;
 }
+.label-pass {
+  margin-right: 20px;
+}
+.label-email {
+  margin-right: 48px;
+}
+
 .container {
-  margin: 0 17%;
   padding: 5%;
-  border-radius: 1%;
-}
-.title {
+  border-radius: 20px;
+  background-color: yellow;
+  width: 48rem;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+.signup {
+  display: block;
 }
 
-.title {
+.name-inputs {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  gap: 22px;
 }
-.button {
-  margin-left: 120px;
+.name-inputs input {
+  width: max-content;
 }
-input {
+.email-input,
+.password-input {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.email-input input,
+.password-input input {
+  width: 83%;
+}
+select {
   border: none;
-  height: 40px;
-  width: 400px;
-  border-radius: 12px;
-  background-color: #d9d9d8;
-  padding-left: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s ease;
 }
-
-@media only screen and (max-width: 600px) {
-  input {
+label {
+  margin-top: 1%;
+  text-align: left;
+  font-size: 16px;
+}
+.dropdowns {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  gap: 10.5%;
+  margin-bottom: 10%;
+}
+.btn-submit {
+  display: block;
+}
+@media only screen and (max-width: 900px) {
+  .container-signup {
     width: 100%;
+    display: block;
   }
-}
 
-@media only screen and (min-width: 601px) and (max-width: 768px) {
-  input {
-    width: 80%;
+  .name-inputs,
+  .dropdowns,
+  .btn-submit {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn-submit button {
+    width: 120px;
   }
 }

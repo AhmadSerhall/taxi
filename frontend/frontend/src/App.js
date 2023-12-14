@@ -4,6 +4,7 @@ import SignUp from "./pages/signup";
 import Login from "./pages/login";
 import Rating from "./pages/rating";
 import Map from "./pages/rides";
+import HomePage from "./pages/landing";
 function App() {
   return (
     <div className="app">
@@ -15,6 +16,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/ride" element={<Map />} />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </BrowserRouter>
     </div>
