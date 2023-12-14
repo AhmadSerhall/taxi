@@ -1,18 +1,38 @@
 import React, { useEffect, useState } from "react";
 import "./index.css";
 import axios from "axios";
+
 const DriverRequest = ({ passenger_location, destination, driver_name, request_date, status, rate }) => {
-  const [rides, setRide] = useState([]);
+  const [rides, setRides] = useState([]);
+
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/rides")
       .then(function (res) {
-        setRide(res.data);
+        setRides(res.data);
       })
       .catch(function (error) {
         console.log("error");
       });
   }, []);
+
+  const handleApprove = async (index) => {
+    try {
+      const response = await axios.post("http://localhost:8000/api/rides/approve/request", {
+        respond: "Approved",
+        driver_id: rides[index].driver_id,
+      });
+
+      if (response.data.status === "RIDE CREATED") {
+        const updatedRides = [...rides];
+        updatedRides[index].status = "on going";
+        setRides(updatedRides);
+      }
+    } catch (error) {
+      console.error("Error approving request:", error);
+    }
+  };
+
   return (
     <div>
       {rides.length > 0 ? (
@@ -31,10 +51,16 @@ const DriverRequest = ({ passenger_location, destination, driver_name, request_d
                 <p className="txt">Request Date: {ride.created_at}</p>
                 <div className="flex center">
                   <p className="txt">Status:</p>
-                  <div className="flex">
-                    <button className="btn-app"> Approve </button>
-                    <button className="btn-rej"> Reject </button>
-                  </div>
+                  {ride.status === "on going" ? (
+                    <div className="ongoing-status">Ongoing</div>
+                  ) : (
+                    <div className="flex">
+                      <button className="btn-app" onClick={() => handleApprove(index)}>
+                        Approve
+                      </button>
+                      <button className="btn-rej"> Reject </button>
+                    </div>
+                  )}
                 </div>
                 <p className="txt">Cost: {ride.price}</p>
               </div>
