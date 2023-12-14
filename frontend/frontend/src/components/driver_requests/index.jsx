@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
+import axios from "axios";
 const DriverRequest = ({ passenger_location, destination, driver_name, request_date, status, rate }) => {
+  const [rides, setRide] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/rides")
+      .then(function (res) {
+        setRide(res.data);
+      })
+      .catch(function (error) {
+        console.log("error");
+      });
+  }, []);
   return (
     <div>
       <div className="container flex space-around ">

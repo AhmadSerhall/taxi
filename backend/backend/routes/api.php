@@ -40,6 +40,7 @@ Route::delete('delete_user/{id}', [UserController::class, 'delete_user']);
 
 Route::controller(RideController::class)->group(function () {
     Route::post('finish/ride', 'finish_ride');
+    Route::get('/rides','get_rides');
 });
 
 Route::controller(RequestsController::class)->group(function () {

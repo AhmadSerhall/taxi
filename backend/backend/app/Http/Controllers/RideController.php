@@ -33,4 +33,10 @@ public function finish_ride(Request $req){
         return response()->json(['Error :  unauthorized' ]);
     }
 }
+
+
+public function get_rides(){
+    $ride = Ride::all();
+    return $ride;
+}
 }
