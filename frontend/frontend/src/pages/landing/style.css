@@ -1,0 +1,35 @@
+header {
+  background-image: url("../../assets/Best-Taxi-Apps.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+}
+
+.nav-comp {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.hero-txt {
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  width: 30%;
+}
+.hero-btn {
+  background-color: #fad827;
+  padding: 20px;
+  border-radius: 20px;
+  width: 20%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.card {
+  padding: 30px;
+  border: 2px solid black;
+  width: 20%;
+}

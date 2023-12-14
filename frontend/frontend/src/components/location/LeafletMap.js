@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  useMapEvents,
-} from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 import Leaflet from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -52,8 +46,7 @@ const LeafletMap = () => {
       style={{ height: "50vh", width: "100 vw" }}
       center={[33.88579137057757, 35.50668447067024]}
       zoom={13}
-      scrollWheelZoom={false}
-    >
+      scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -67,11 +60,9 @@ const LeafletMap = () => {
           icon={
             new Leaflet.Icon({
               iconSize: new Leaflet.Point(60, 75),
-              iconUrl:
-                "https://static-00.iconduck.com/assets.00/person-icon-512x483-d7q8hqj4.png",
+              iconUrl: "https://static-00.iconduck.com/assets.00/person-icon-512x483-d7q8hqj4.png",
             })
-          }
-        >
+          }>
           <Popup>
             Here I am <br /> Where are you?
           </Popup>
