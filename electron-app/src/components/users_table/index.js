@@ -1,38 +1,34 @@
 import Tr from "../passengers/passengers";
-import { sendRequest } from "../../../../electron-app/src/core/request";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 const UsersTable = () => {
-  const [formData, setFormData] = useState({});
+  const Token = localStorage.getItem("token");
   const navigate = useNavigate();
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [data, setData] = useState([]);
+
   useEffect(() => {
-    handleSubmit();
-  }, []);
-  const handleSubmit = async () => {
-    console.log(formData);
-    try {
-      const response = await axios.get("http://127.0.0.1:8000/api/get_users");
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://127.0.0.1:8000/api/get_users",
+          {
+            headers: {
+              Authorization: `Bearer ${Token}`,
+            },
+          }
+        );
 
-      console.log(response.data);
-    } catch (error) {
-      console.error("Error during form submission:", error);
-    }
-  };
+        setData(response.data?.passengers || []); // Set to an empty array if undefined
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  // const [data, setData] = useState("");
-  // useEffect(() => {
-  //   const sendRequest = async () => {
-  //     const myData = await sendRequest("get_users", "GET", "");
-  //     setData(myData.passengers);
-  //     console.log(myData);
-  //   };
-  //   sendRequest();
-  // }, []);
+    fetchData();
+  }, [Token]);
+
   return (
     <div className="table-container">
       <table>
@@ -46,8 +42,14 @@ const UsersTable = () => {
             <th>Action</th>
           </tr>
         </thead>
-        <tbody id="tbody">
-          {/* {!!data && data.map((item) => <Tr data={item} />)} */}
+        <tbody>
+          {data.map((user) => (
+            <tr key={user.user_id}>
+              <td>{user.first_name}</td>
+              <td>{user.last_name}</td>
+              <td>{user.email}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

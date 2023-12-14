@@ -22,6 +22,7 @@ const Login = () => {
       );
       if (response.data) {
         localStorage.setItem("token", response.data.authorisation.token);
+        console.log(response.data.authorisation.token);
         navigate("/admin_panel");
       }
       console.log(response.data);
