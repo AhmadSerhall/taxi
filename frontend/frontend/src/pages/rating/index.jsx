@@ -7,8 +7,6 @@ import StarRating from "react-rating";
 import emptyStar from "../../assets/emptystar.png";
 import goldenStar from "../../assets/goldenstar.png";
 
-import "./style.css";
-
 const Rating = () => {
   return (
     <>
