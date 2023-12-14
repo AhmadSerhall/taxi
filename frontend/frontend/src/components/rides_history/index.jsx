@@ -29,7 +29,7 @@ const RidesHistory = () => {
                 </div>
                 <div className="ride-history-details-right flex column space-around">
                   <p className="txt">Request Date: {ride.created_at}</p>
-                  <div className="flex">
+                  <div className="flex align-base">
                     <p className="txt">Status:</p>
                     <div className="flex">
                       <div className="btn-done">{ride.status}</div>
