@@ -38,7 +38,7 @@ const DriverRequest = ({ passenger_location, destination, driver_name, request_d
       {rides.length > 0 ? (
         rides.map((ride, index) =>
           ride.status === "pending" ? (
-            <div key={index} className="container flex space-around">
+            <div key={index} className="container-rides-card flex space-around">
               <div className="left flex column">
                 <h1>Latest Request</h1>
                 <div className="request_card_l flex column space-around">
