@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->char('gender');
             $table->unsignedBigInteger('role_id');
-            $table->foreign('role_id')->references('role_id')->on('roles')->onDelete('cascade');;
+            $table->foreign('role_id')->references('role_id')->on('roles')->onDelete('cascade');
             $table->timestamps();
         });
     }

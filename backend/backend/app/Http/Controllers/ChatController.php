@@ -12,7 +12,6 @@ class ChatController extends Controller
     public function create(Request $req)
     {
         if (auth('driver-api')->user() instanceof Driver && auth('driver-api')->user()) {
-            echo"hello";
             $driver = auth('driver-api')->user();
             if ($driver && $driver->role_id == 2) {
                 $request = Chat::create([
