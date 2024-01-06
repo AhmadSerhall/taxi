@@ -6,8 +6,7 @@ import Input from "../../components/input";
 import Button from "../../components/button";
 import { useState } from "react";
 import axios from "axios";
-import { Link,useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -28,8 +27,7 @@ const Login = () => {
         formData
       );
       console.log(response.data);
-    navigate('/landing');
-
+      navigate("/");
     } catch (error) {
       console.error("Error during form submission:", error);
     }
@@ -60,10 +58,8 @@ const Login = () => {
             <Button type="submit" text="login" />
           </div>
           <div className="create-acc">
-          <Link to="/signup" >Create a new account</Link>
+            <Link to="/signup">Create a new account</Link>
           </div>
-
-
         </div>
       </form>
     </section>

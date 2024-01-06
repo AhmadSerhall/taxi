@@ -12,20 +12,20 @@ const Landing = () => {
             <img src={logo} alt="" />
           </div>
           <div className="navigation">
-      <Link to="/" className="nav-comp">
-        Home
-      </Link>
-      <Link  className="nav-comp">
-        About us
-      </Link>
-      <Link  className="nav-comp">
-        Contact us
-      </Link>
-    </div>
+            <Link to="/" className="nav-comp">
+              Home
+            </Link>
+            <Link className="nav-comp">About us</Link>
+            <Link className="nav-comp">Contact us</Link>
+          </div>
         </nav>
         <div className="flex center column">
-          <div className="hero-txt">Discover Seamless Transportation with Relaxi Taxi .</div>
-          <Link to ="/ride"><button className="hero-btn ">Browse Our Services</button></Link>
+          <div className="hero-txt">
+            Discover Seamless Transportation with Relaxi Taxi .
+          </div>
+          <Link to="/ride">
+            <button className="hero-btn ">Browse Our Services</button>
+          </Link>
         </div>
       </header>
       <div className="under-hero flex column center">
@@ -33,15 +33,19 @@ const Landing = () => {
         <div className="our-exception flex center gap">
           <div className="card flex column center">
             <h3>Quality</h3>
-            <div className="e-txt">We ensures you the best quality services</div>
+            <div className="e-txt">
+              We ensures you the best quality services
+            </div>
           </div>
           <div className="card flex column center middle">
             <h3>Reliable</h3>
-            <div className="e-txt" >You can rely on our services anytime</div>
+            <div className="e-txt">You can rely on our services anytime</div>
           </div>
           <div className="card flex column center">
             <h3>Affordable</h3>
-            <div className="e-txt">Our services are very cheap and affordable</div>
+            <div className="e-txt">
+              Our services are very cheap and affordable
+            </div>
           </div>
         </div>
       </div>

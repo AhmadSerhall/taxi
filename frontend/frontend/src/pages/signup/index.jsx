@@ -5,8 +5,9 @@ import axios from "axios";
 import { useState } from "react";
 import "../../styles/global.css";
 import "./style.css";
-
+import { Link, useNavigate } from "react-router-dom";
 const SignUp = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -29,6 +30,7 @@ const SignUp = () => {
           formData
         );
         console.log(response.data);
+        navigate("/signin");
       } catch (error) {
         console.error(error);
       }
@@ -40,6 +42,7 @@ const SignUp = () => {
           formData
         );
         console.log(response.data);
+        navigate("/signin");
       } catch (error) {
         console.error(error);
       }
@@ -123,7 +126,7 @@ const SignUp = () => {
         </div>
       </form>
     </section>
-      );
-    };
-    
-    export default SignUp;
+  );
+};
+
+export default SignUp;
